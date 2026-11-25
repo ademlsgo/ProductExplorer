@@ -10,6 +10,7 @@ Product Explorer est le projet fil rouge du bloc 2 : il démarre au TP4 et s'enr
 |----|-------|---------|
 | TP4 | Composants fondamentaux | Écran de détail produit |
 | TP5 | Layouts Compose | Écran d'accueil |
+| TP6 | Listes modernes | Catalogue local de produits |
 
 ---
 
@@ -53,3 +54,23 @@ Product Explorer est le projet fil rouge du bloc 2 : il démarre au TP4 et s'enr
 **Notions :** `Column`, `Row`, `Box`, `Spacer`, `Surface`, `weight`, `align`, `tonalElevation`.
 
 ![Capture TP5](docs/tp5.png)
+
+---
+
+## TP6 – Catalogue local de produits
+
+**Objectif :** afficher plusieurs produits avec les listes modernes de Compose. Le catalogue devient l'écran affiché au lancement (l'accueil et le détail restent dans le code).
+
+**Ce qui a été fait :**
+- Ajout d'un identifiant `id` dans `ProductUi`.
+- `sampleProducts()` : liste locale de 4 produits ; `sampleCategories()` : liste de catégories.
+- `ProductCatalogScreen` : une `LazyColumn` avec `contentPadding` et `Arrangement.spacedBy`, qui contient :
+  - des éléments uniques avec `item` (titre, description, ligne de catégories) ;
+  - la liste des produits avec `items(products, key = { it.id })`.
+- `ProductListItem` : carte produit réutilisable (`Card`) avec un bouton « Voir le produit » qui remonte le produit cliqué via `onProductClick`.
+- `CategoryRow` : liste horizontale de catégories avec `LazyRow`, qui réutilise `CategoryChip` du TP5.
+- Preview `ProductCatalogScreenPreview`.
+
+**Notions :** `LazyColumn`, `LazyRow`, `item`, `items`, `key`, `PaddingValues`, `Arrangement.spacedBy`.
+
+![Capture TP6](docs/tp6.png)
