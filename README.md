@@ -9,6 +9,7 @@ Product Explorer est le projet fil rouge du bloc 2 : il démarre au TP4 et s'enr
 | TP | Thème | Contenu |
 |----|-------|---------|
 | TP4 | Composants fondamentaux | Écran de détail produit |
+| TP5 | Layouts Compose | Écran d'accueil |
 
 ---
 
@@ -32,3 +33,23 @@ Product Explorer est le projet fil rouge du bloc 2 : il démarre au TP4 et s'enr
 **Notions :** `Text`, `Button`, `Icon`, `Image`, `Card`, `TextField`, `Modifier`, callbacks, `@Preview`.
 
 ![Capture TP4](docs/tp4.png)
+
+---
+
+## TP5 – Écran d'accueil
+
+**Objectif :** construire l'écran d'accueil de l'application avec les principaux layouts Compose. L'écran de détail du TP4 reste dans le code, mais c'est l'accueil qui s'affiche au lancement.
+
+**Ce qui a été fait :**
+- `ProductHomeScreen` : écran principal qui assemble les sections dans une `Column`, espacées avec des `Spacer`.
+- `HomeHeader` : titre et sous-titre de l'application.
+- `SearchPreviewBar` : fausse barre de recherche (visuelle uniquement) construite avec une `Surface`.
+- `FeaturedProductSection` : produit mis en avant dans une `Surface`, avec un bouton « Voir le produit » qui expose un callback.
+- `ProductQuickInfoRow` : prix, note et stock côte à côte dans une `Row` avec `weight(1f)`.
+- `CategoryChip` et `CategoriesSection` : petites catégories en `Surface` alignées dans une `Row`.
+- `DailyOfferBox` : bloc « Offre du jour » avec un badge « Nouveau » superposé en haut à droite grâce à `Box` et `Modifier.align(Alignment.TopEnd)`.
+- Preview `ProductHomeScreenPreview`.
+
+**Notions :** `Column`, `Row`, `Box`, `Spacer`, `Surface`, `weight`, `align`, `tonalElevation`.
+
+![Capture TP5](docs/tp5.png)
