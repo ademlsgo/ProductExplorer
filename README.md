@@ -11,6 +11,7 @@ Product Explorer est le projet fil rouge du bloc 2 : il démarre au TP4 et s'enr
 | TP4 | Composants fondamentaux | Écran de détail produit |
 | TP5 | Layouts Compose | Écran d'accueil |
 | TP6 | Listes modernes | Catalogue local de produits |
+| TP7 | Material Design 3 | Thème clair / sombre personnalisé |
 
 ---
 
@@ -74,3 +75,25 @@ Product Explorer est le projet fil rouge du bloc 2 : il démarre au TP4 et s'enr
 **Notions :** `LazyColumn`, `LazyRow`, `item`, `items`, `key`, `PaddingValues`, `Arrangement.spacedBy`.
 
 ![Capture TP6](docs/tp6.png)
+
+---
+
+## TP7 – Personnalisation graphique (Material Design 3)
+
+**Objectif :** harmoniser l'apparence de toute l'application grâce au thème, plutôt que de styliser chaque composant séparément.
+
+**Ce qui a été fait :**
+- `Theme.kt` :
+  - deux palettes `ColorScheme` (claire et sombre) basées sur des **rôles** : `primary`, `secondary`, `background`, `surface`, `onPrimary`, `onBackground`, `onSurface` ;
+  - choix automatique de la palette avec `isSystemInDarkTheme()` (couleurs dynamiques Material You désactivées pour garder l'identité visuelle de l'app) ;
+  - formes personnalisées `ProductShapes` (arrondis `small` 8 dp → `extraLarge` 32 dp).
+- `Type.kt` : typographie `ProductTypography` (`headlineMedium`, `titleLarge`, `titleMedium`, `bodyMedium`, `labelLarge`).
+- Écran catalogue : fond `colorScheme.background`, titre en `primary`.
+- `ProductListItem` : `Card` avec `shapes.large`, `CardDefaults.cardColors` / `cardElevation`, hiérarchie titre / marque / prix.
+- `CategoryChip` : pastilles arrondies (`shapes.extraLarge`) en couleur `secondary` avec `contentColor`.
+- Deux previews explicites : **Light Theme** et **Dark Theme**, pour vérifier les contrastes.
+- **Vérification du contraste (amélioration) :** en thème sombre, la phrase d'introduction du catalogue restait noire sur fond sombre. Elle utilise maintenant `colorScheme.onBackground`, ce qui la rend lisible dans les deux thèmes.
+
+**Notions :** `MaterialTheme`, `ColorScheme`, `Typography`, `Shapes`, thème clair / sombre, `CardDefaults`.
+
+![Capture TP7 – thème clair et sombre](docs/tp7.png)
